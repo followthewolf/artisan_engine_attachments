@@ -1,0 +1,5 @@
+:plain
+	$('#image_#{ @image.id } a')
+	.html( '#{ escape_javascript( display_image( @image, '110x110#' ) ) }' );
+
+= render 'shared/notify', :section => '#image_notifications'

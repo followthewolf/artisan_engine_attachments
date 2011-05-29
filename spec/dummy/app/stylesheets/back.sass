@@ -1,0 +1,41 @@
+@import blueprint
+
+#images
+	+column( 24, true )
+	
+	.image
+		+column( 3 )
+		
+		.handle
+			text-align: center
+			cursor: move
+			display: inline
+			float: right
+		
+		form
+			display: inline
+			float: left
+
+#crop_image
+	+clearfix
+	width: 960px
+	
+	.crop_preview
+		width: 200px
+		margin: 0 20px 0 20px
+		float: left
+		
+	.new_cropping
+		width: 720px
+		float: left
+	
+#end_cropping	
+	text-align: right
+	border: 1px dashed #DEE9DB
+	margin: 10px
+	padding: 10px
+	
+	input
+		margin-right: 10px
+		padding: 2px
+		font-size: 14px

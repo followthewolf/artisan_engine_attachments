@@ -1,0 +1,4 @@
+%div[ image ]
+	= link_to display_image( image, '110x110#' ), edit_image_path( image )
+	= button_to 'Delete', attachable_image_path( image, :attachable_class => attachable.class, :attachable_id => attachable.id ), :method => :delete
+	.handle= image_tag 'artisan_engine/listability/handle.png'

@@ -1,0 +1,38 @@
+- content_for :javascripts do
+	= javascript_include_tag 'artisan_engine/attachments/jcrop/jquery.Jcrop.min'
+
+:javascript
+	$(document).ready( function() {
+		$( '#images' ).sortable( {
+			items: 			'.image',
+			containment: 	'parent',
+			handle:			'.handle',
+			tolerance:		'pointer',
+			update:			function() {
+								$.ajax( {
+									type: 	 'post',
+									data:		 $( this ).sortable( 'serialize' ),
+									dataType: 'script',
+									url: 		 '/manage/sort/#{ attachable.class }/#{ attachable.id }/Image'
+								} );	
+							}
+		} );
+
+		$('.image a').fancybox({
+			height			: 590,
+			width				: 960,
+			centerOnScroll : true,
+			onComplete : function() {			
+				$('#crop_form').submit( function(e) {
+					e.preventDefault();
+					
+					$.rails.handleRemote( $(this) );
+					$.fancybox.close();
+				})
+			}
+		});
+	});
+
+#images
+	#image_notifications
+	= render attachable.attached( :images ), :attachable => attachable if attachable.attached( :images ).any?

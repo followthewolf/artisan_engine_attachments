@@ -1,0 +1,37 @@
+:javascript
+	$( function() {
+		$( '.croppable' ).Jcrop({
+			onChange: 		update_crop,
+			onSelect: 		update_crop,
+			setSelect: 		[0, 0, 200, 200],
+			aspectRatio: 	1
+		});
+	});
+	
+	function update_crop( coords ) {
+		var ratio = #{ @image.image_file.width } / #{ @image.image_file.thumb( '700x' ).width };
+		
+		$( '#crop_x' ).val( Math.round( coords.x * ratio ) );
+		$( '#crop_y' ).val( Math.round( coords.y * ratio ) );
+		$( '#crop_w' ).val( Math.round( coords.w * ratio ) );
+		$( '#crop_h' ).val( Math.round( coords.h * ratio ) );
+	}
+
+#main
+	%h1 Crop #{ @image.name }
+
+#crop_image
+	.crop_preview
+		= display_image( @image )
+
+	.new_cropping
+		= image_tag( @image.image_file.thumb( '700x' ).url, :class => :croppable )
+	
+#end_cropping
+	= form_for :image, :url => image_path( @image ), :html => { :method => :put, :id => 'crop_form' } do |f|
+		- for attribute in [ :crop_x, :crop_y, :crop_w, :crop_h ]
+			= f.hidden_field attribute, :id => attribute
+		
+		= f.label		:name
+		= f.text_field :name
+		= f.submit 'Crop Image'

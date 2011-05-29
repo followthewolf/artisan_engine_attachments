@@ -1,0 +1,8 @@
+%h1 Demo Image Attachment Interface
+
+#images
+	#image_notifications
+	= render 'manage/images/all', :attachable => @cyborg
+
+%h4 Add an Image
+= render 'manage/images/form', :attachable => @cyborg

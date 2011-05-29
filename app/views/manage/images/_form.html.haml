@@ -1,0 +1,11 @@
+- return_to ||= nil
+
+#new_image
+	= form_for :image, :url => images_path( :attachable_class => attachable.class, :attachable_id => attachable.id, :return_to => return_to ), :html => { :multipart => true } do |f|		
+		= f.label 		:name
+		= f.text_field :name
+		
+		= f.label		:image_file, 'Image'
+		= f.file_field :image_file
+		
+		= f.submit 'Attach New Image'
