@@ -5,6 +5,9 @@ require 'artisan_engine/attachments'
 
 module ArtisanEngine
   module Attachments
+    
+    mattr_accessor :s3_bucket
+    @@s3_bucket = 'artisan_engine_bucket'
 
     # ------------------ Autoload Necessary Modules ------------------ #
     

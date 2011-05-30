@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency      'artisan_engine_attachability'
   
   s.add_runtime_dependency      'dragonfly',            '0.9.1'
+  s.add_runtime_dependency      'fog',                  '0.8.2'
   
   # ------------------- Development Dependencies ------------------- #
   ## ------------------------- Test Suite ------------------------- ##
