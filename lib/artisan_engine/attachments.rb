@@ -20,8 +20,7 @@ module ArtisanEngine
       config.before_configuration do
         ActionView::Helpers::AssetTagHelper.register_stylesheet_expansion :artisan_engine       => [ "artisan_engine/attachments/back",
                                                                                                      "artisan_engine/attachments/embed/jcrop/jquery.Jcrop" ],
-                                                                          :artisan_engine_front => [ "artisan_engine/attachments/front",
-                                                                                                     "artisan_engine/attachments/embed/jcrop/jquery.Jcrop" ]
+                                                                          :artisan_engine_front => [ "artisan_engine/attachments/embed/jcrop/jquery.Jcrop" ]
       
         config.action_view.javascript_expansions[ :defaults ] += [ "artisan_engine/attachments/attachments" ] 
       end

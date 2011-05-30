@@ -23,11 +23,6 @@ describe ArtisanEngine::Attachments do
     end
     
     context "artisan_engine_front:" do
-      it "artisan_engine/attachments/front" do
-        ActionView::Helpers::AssetTagHelper.stylesheet_expansions[ :artisan_engine_front ]
-        .should include "artisan_engine/attachments/front"
-      end
-      
       it "artisan_engine/attachments/embed/jcrop/jquery.Jcrop" do
         ActionView::Helpers::AssetTagHelper.stylesheet_expansions[ :artisan_engine_front ]
         .should include "artisan_engine/attachments/embed/jcrop/jquery.Jcrop"
