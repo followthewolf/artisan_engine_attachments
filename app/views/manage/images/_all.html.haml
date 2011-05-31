@@ -1,5 +1,5 @@
 - content_for :javascripts do
-	= javascript_include_tag 'artisan_engine/attachments/jcrop/jquery.Jcrop.min'
+	= javascript_include_tag 'artisan_engine/attachments/jcrop/jquery.Jcrop.min' unless Rails.env.production?
 
 :javascript
 	$(document).ready( function() {
