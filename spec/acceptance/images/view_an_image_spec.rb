@@ -23,17 +23,17 @@ feature "View an Image", %q{
   
   scenario "I can click the image to see a full-size version" do
     # When I click the image,
-    click_link 'Test Image Full Size'
+    click_link 'Test Image'
     
     # Then I should see the full-size image,
-    page.should have_selector 'img[title="Test Image Full Size"]'
+    page.should have_selector 'img[title="Test Image"]'
   end
   
   scenario "I can click the image to see a full-size version in a Lightbox", :js => true do
     # When I click the image,
-    click_link 'Test Image Full Size'
+    click_link 'Test Image'
     
     # Then I should see the image within a Lightbox,
-    page.should have_selector '#fancybox-content img[title="Test Image Full Size"]'
+    page.should have_selector '#fancybox-content img[title="Test Image"]'
   end
 end
