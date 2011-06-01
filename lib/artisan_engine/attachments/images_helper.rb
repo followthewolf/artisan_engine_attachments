@@ -9,10 +9,13 @@ module ArtisanEngine
         
         options[ :alt ]   ||= "#{ image.name } Image"
         options[ :title ] ||= image.name
+        options[ :crop ]  ||= true
     
-        if image.crop_values
+        if image.crop_values and options[ :crop ] == true
+          options.delete :crop
           image_tag user_cropped_image( image, size ), options
     		else
+    		  options.delete :crop
     		  image_tag default_cropped_image( image, size ), options
     	  end
       end
