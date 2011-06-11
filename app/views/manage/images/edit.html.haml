@@ -1,5 +1,7 @@
 :javascript
 	$( function() {
+		$( '.new_cropping' ).css( 'height', '#{ @image.image_file.thumb( '700x' ).height }px' );
+	
 		$( '.croppable' ).Jcrop({
 			onChange: 		update_crop,
 			onSelect: 		update_crop,
