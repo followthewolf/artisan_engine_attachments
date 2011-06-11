@@ -17,22 +17,22 @@
 								} );	
 							}
 		} );
-
-		$('.image a').fancybox({
-			height			: 590,
-			width				: 960,
-			centerOnScroll : true,
-			onComplete : function() {			
+		
+		$( '.image a' ).colorbox({
+			transition: 'none',
+			initialHeight: 590,
+			initialWidth: 960,
+			onComplete: function() {
 				$('#crop_form').submit( function(e) {
 					e.preventDefault();
-					
+
 					$.rails.handleRemote( $(this) );
-					$.fancybox.close();
+					$.colorbox.close();
 				})
 			}
 		});
 	});
-
+	
 #images
 	#image_notifications
 	= render attachable.attached( :images ), :attachable => attachable if attachable.attached( :images ).any?

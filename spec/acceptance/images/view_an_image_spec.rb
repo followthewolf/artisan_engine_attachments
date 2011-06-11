@@ -34,6 +34,6 @@ feature "View an Image", %q{
     click_link 'Test Image'
     
     # Then I should see the image within a Lightbox,
-    page.should have_selector '#fancybox-content img[title="Test Image"]'
+    page.should have_selector '#colorbox img[title="Test Image"]'
   end
 end

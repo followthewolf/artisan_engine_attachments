@@ -1,14 +1,21 @@
-GIT
-  remote: git@github.com:followthewolf/artisan_engine_attachability.git
-  revision: 9801d2f1a74a41087d484c858bcfcf0c8aef4606
+PATH
+  remote: .
+  specs:
+    artisan_engine_attachments (0.0.1)
+      artisan_engine_attachability
+      artisan_engine_core
+      dragonfly (= 0.9.1)
+      fog (= 0.8.2)
+
+PATH
+  remote: ../attachability
   specs:
     artisan_engine_attachability (0.0.1)
       artisan_engine_core
       artisan_engine_listability
 
-GIT
-  remote: git@github.com:followthewolf/artisan_engine_core.git
-  revision: 2ddf4c7bc7903c819b706867c16c0e3dcc6ac139
+PATH
+  remote: ../core
   specs:
     artisan_engine_core (0.0.1)
       barista (= 1.0.0)
@@ -20,21 +27,11 @@ GIT
       rails (= 3.0.7)
       rdiscount (= 1.6.8)
 
-GIT
-  remote: git@github.com:followthewolf/artisan_engine_listability.git
-  revision: f9c2087dc28ddb247b08aa3d57539443d7bccc48
+PATH
+  remote: ../listability
   specs:
     artisan_engine_listability (0.0.1)
       artisan_engine_core
-
-PATH
-  remote: .
-  specs:
-    artisan_engine_attachments (0.0.1)
-      artisan_engine_attachability
-      artisan_engine_core
-      dragonfly (= 0.9.1)
-      fog (= 0.8.2)
 
 GEM
   remote: http://rubygems.org/
